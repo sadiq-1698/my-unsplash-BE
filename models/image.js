@@ -9,10 +9,9 @@ const ImageSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  galleryId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "gallery",
-    required: true
+  date: {
+    type: Date,
+    default: Date.now()
   }
 });
 

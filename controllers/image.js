@@ -14,10 +14,11 @@ exports.get_an_image = async (req, res) => {
   }
 };
 
-exports.get_all_images = async (req, res) => {
+exports.get_all_images = async (_, res) => {
   try {
     const images = await imageModel.find({});
     if (!images) return res.send("Error fetching images");
+    images.reverse();
     return res.send(images);
   } catch (err) {
     res.send(err);
@@ -41,8 +42,7 @@ exports.delete_image = async (req, res) => {
 exports.add_new_image = async (req, res) => {
   const image = new imageModel({
     label: req.body.label,
-    url: req.body.url,
-    galleryId: req.body.galleryId
+    url: req.body.url
   });
 
   try {
