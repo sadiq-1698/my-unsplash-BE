@@ -36,5 +36,3 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, function() {
   console.log("This application is live!");
 });
-
-MONGO_URL=mongodb+srv://sadiq-1698:Iamtheboss1698@todo.rodyv.mongodb.net/my-unsplash?retryWrites=true&w=majority
