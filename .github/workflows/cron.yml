@@ -1,0 +1,14 @@
+name: Daily Cypress browser testing
+
+on:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron: '*/2 * * * *'
+
+jobs:
+  test_schedule:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run every 2 minutes
+        run: echo "Running every 2 minutes"
+
